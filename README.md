@@ -41,12 +41,13 @@ In the example below, an LLM could decode both blocks of text without any issue.
 ## Running the benchmark
 
 1. Clone the repo and install dependencies: `npm install`
-2. Prepare your test data
+2. Install ImageMagick in your operational system
+3. Prepare your test data
    1. For local data, add individual files to the `data` folder.
    2. To pull from a DB, add `DATABASE_URL` in your `.env`
-3. Copy the `models.example.yaml` file to `models.yaml`. Set up API keys in `.env` for the models you want to test. Check out the [supported models](#supported-models) here.
-4. Run the benchmark: `npm run benchmark`
-5. Results will be saved in the `results/<timestamp>/results.json` file.
+4. Copy the `models.example.yaml` file to `models.yaml`. Set up API keys in `.env` for the models you want to test. Check out the [supported models](#supported-models) here.
+5. Run the benchmark: `npm run benchmark`
+6. Results will be saved in the `results/<timestamp>/results.json` file.
 
 ## Supported models
 
