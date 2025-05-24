@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "benchmark": "ts-node src/index.ts"
+    "benchmark": "ts-node src/index.ts",
+    "postinstall": "echo 'Certifique-se de ter o ImageMagick instalado no seu sistema operacional.'"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^1.1.13",

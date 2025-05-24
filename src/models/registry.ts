@@ -46,6 +46,7 @@ export const GOOGLE_GENERATIVE_AI_MODELS = [
   'gemini-2.0-flash-001',
   'gemini-2.5-pro-exp-03-25',
   'gemini-2.5-pro-preview-03-25',
+  'gemini-2.5-pro-preview-05-06',
   'gemini-2.5-flash-preview-04-17',
 ];
 export const OPENROUTER_MODELS = [
@@ -61,6 +62,11 @@ export const TOGETHER_MODELS = [
   'meta-llama/Llama-3.2-90B-Vision-Instruct-Turbo',
   'meta-llama/Llama-4-Scout-17B-16E-Instruct',
   'meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8',
+];
+export const MARITACA_MODELS = [
+  'sabia-3',
+  'sabia-3.1',
+  'sabiazinho-3',
 ];
 export const FINETUNED_MODELS = [];
 
@@ -104,6 +110,10 @@ export const MODEL_PROVIDERS = {
   openai: {
     models: OPENAI_MODELS,
     provider: LLMProvider,
+  },
+  maritaca: {
+    models: MARITACA_MODELS,
+    provider: MaritacaProvider,
   },
   openaiBase: {
     models: ['google/gemma-3-27b-it'],

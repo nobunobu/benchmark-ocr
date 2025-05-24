@@ -41,6 +41,10 @@ export const TOKEN_COST = {
     input: 3,
     output: 15,
   },
+  'claude-sonnet-4-20250514': {
+    input: 3,
+    output: 15,
+  },
   'deepseek-chat': {
     input: 0.14,
     output: 0.28,
@@ -62,6 +66,10 @@ export const TOKEN_COST = {
     output: 10,
   },
   'gemini-2.5-pro-preview-03-25': {
+    input: 1.25,
+    output: 10,
+  },
+  'gemini-2.5-pro-preview-05-06': {
     input: 1.25,
     output: 10,
   },
@@ -157,6 +165,26 @@ export const TOKEN_COST = {
   'meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8': {
     input: 0.27,
     output: 0.85,
+  },
+  'sabia-3': {
+    input: 0.89, // R$5,00 cotação 2025-05-20
+    output: 1.77, // R$10,00 cotação 2025-05-20
+  },
+  'sabia-3.1': {
+    input: 0.89, // R$5,00 cotação 2025-05-20
+    output: 1.77, // R$10,00 cotação 2025-05-20
+  },
+  'sabiazinho-3': {
+    input: 0.18, // R$1,00 cotação 2025-05-20
+    output: 0.53, // R$3,00 cotação 2025-05-20
+  },
+  'aaditya/OpenBioLLM-Llama3-70B': {
+    input: 0.18,
+    output: 0.18,
+  },
+  'aaditya/OpenBioLLM-Llama3-70B-Instruct': {
+    input: 0.18,
+    output: 0.18,
   },
 };
 
