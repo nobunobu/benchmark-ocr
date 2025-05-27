@@ -38,6 +38,8 @@ export const AZURE_OPENAI_MODELS = [
 export const ANTHROPIC_MODELS = [
   'claude-3-5-sonnet-20241022',
   'claude-3-7-sonnet-20250219',
+  'claude-sonnet-4-20250514',
+  'claude-opus-4-20250514',
 ];
 export const DEEPSEEK_MODELS = ['deepseek-chat'];
 export const GOOGLE_GENERATIVE_AI_MODELS = [

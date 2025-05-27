@@ -9,7 +9,7 @@
     "benchmark": "ts-node src/index.ts"
   },
   "dependencies": {
-    "@ai-sdk/anthropic": "^1.1.13",
+    "@ai-sdk/anthropic": "^1.2.12",
     "@ai-sdk/azure": "^1.1.9",
     "@ai-sdk/deepseek": "^0.1.6",
     "@ai-sdk/google": "^1.1.10",
@@ -22,7 +22,7 @@
     "@huggingface/hub": "^1.0.1",
     "@mistralai/mistralai": "^1.5.1",
     "@prisma/client": "^6.3.1",
-    "ai": "^4.3.8",
+    "ai": "^4.3.16",
     "axios": "^1.7.9",
     "canvas": "^3.1.0",
     "cli-progress": "^3.12.0",
@@ -35,6 +35,7 @@
     "moment": "^2.30.1",
     "openai": "^4.94.0",
     "p-limit": "^3.1.0",
+    "pdfkit": "^0.17.1",
     "pg": "^8.13.1",
     "sharp": "^0.33.5",
     "together-ai": "^0.13.0",
