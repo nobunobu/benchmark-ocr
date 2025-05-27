@@ -65,7 +65,7 @@ export const TOKEN_COST = {
     input: 1.25,
     output: 10,
   },
-  'gemini-2.5-flash-preview-04-17': {
+  'gemini-2.5-flash-preview-05-20': {
     input: 0.15,
     output: 0.6,
   },
