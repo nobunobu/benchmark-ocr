@@ -11,6 +11,7 @@ import { OpenRouterProvider } from './openrouter';
 import { TogetherProvider } from './togetherai';
 import { UnstructuredProvider } from './unstructured';
 import { ZeroxProvider } from './zerox';
+import { MaritacaProvider } from './maritaca';
 
 export const OPENAI_MODELS = [
   'chatgpt-4o-latest',

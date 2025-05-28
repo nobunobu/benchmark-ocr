@@ -7,6 +7,8 @@
     "build": "tsc",
     "test": "jest",
     "benchmark": "ts-node src/index.ts",
+    "benchmark-full": "python -c \"print('Starting Python preprocessing...')\" && ts-node src/index.ts && python -c \"print('Benchmark completed!')\"",
+    "dashboard": "streamlit run dashboard/Home.py",
     "postinstall": "echo 'Certifique-se de ter o ImageMagick instalado no seu sistema operacional.'"
   },
   "dependencies": {
