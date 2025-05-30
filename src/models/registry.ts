@@ -1,5 +1,6 @@
 import { AzureDocumentIntelligenceProvider } from './azure';
 import { AWSTextractProvider } from './awsTextract';
+import { AWSBedrockProvider } from './awsBedrock';
 import { DashscopeProvider } from './dashscope';
 import { GeminiProvider } from './gemini';
 import { GoogleDocumentAIProvider } from './googleDocumentAI';
@@ -71,6 +72,10 @@ export const MARITACA_MODELS = [
 ];
 export const FINETUNED_MODELS = [];
 
+export const AWS_BEDROCK_MODELS = [
+  'us.meta.llama4-maverick-17b-instruct-v1:0',
+];
+
 export const MODEL_PROVIDERS = {
   anthropic: {
     models: ANTHROPIC_MODELS,
@@ -79,6 +84,10 @@ export const MODEL_PROVIDERS = {
   aws: {
     models: ['aws-textract'],
     provider: AWSTextractProvider,
+  },
+  awsBedrock: {
+    models: AWS_BEDROCK_MODELS,
+    provider: AWSBedrockProvider,
   },
   azureOpenai: {
     models: AZURE_OPENAI_MODELS,
