@@ -28,6 +28,12 @@ models:
   #   extraction: us.meta.llama4-maverick-17b-instruct-v1:0
   #   directImageExtraction: true
 
+  # AWS Bedrock Mistral Mixtral-8x7b examples (text extraction only)
+  # - ocr: gpt-4o
+  #   extraction: mistral.mixtral-8x7b-instruct-v0:1
+  # - ocr: claude-3-5-sonnet-20241022
+  #   extraction: mistral.mixtral-8x7b-instruct-v0:1
+
   # OCR providers examples
   # - ocr: aws-textract
   #   extraction: gpt-4o

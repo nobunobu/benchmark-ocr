@@ -47,8 +47,9 @@ In the example below, an LLM could decode both blocks of text without any issue.
    2. To pull from a DB, add `DATABASE_URL` in your `.env`
 4. Copy the `models.example.yaml` file to `models.yaml`. Set up API keys in `.env` for the models you want to test. Check out the [supported models](#supported-models) here.
 5. **For AWS Bedrock Llama 4 Maverick**: Test your connection first with `npm run test-llama4` (see [AWS Bedrock Configuration](./docs/AWS_BEDROCK_LLAMA4_CONFIGURATION.md))
-6. Run the benchmark: `npm run benchmark`
-7. Results will be saved in the `results/<timestamp>/results.json` file.
+6. **For AWS Bedrock Mistral Mixtral-8x7b**: Test your connection first with `npm run test-mistral` (see [AWS Bedrock Mistral Configuration](./docs/AWS_BEDROCK_MISTRAL_CONFIGURATION.md))
+7. Run the benchmark: `npm run benchmark`
+8. Results will be saved in the `results/<timestamp>/results.json` file.
 
 ## Supported models
 
@@ -76,6 +77,7 @@ You can view configuration for each model in the [src/models/](./src/models/) fo
 | Mistral        | `mistral-ocr`                                                | ✅  | ❌              | `MISTRAL_API_KEY`                                                                                    |
 | OmniAI         | `omniai`                                                     | ✅  | ✅              | `OMNIAI_API_KEY`, `OMNIAI_API_URL`                                                                   |
 | AWS Bedrock    | `us.meta.llama4-maverick-17b-instruct-v1:0`                 | ✅  | ✅              | `AWS_BEDROCK_INFERENCE_PROFILE_LLAMA4`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`  |
+| AWS Bedrock Mistral | `mistral.mixtral-8x7b-instruct-v0:1`                   | ❌  | ✅              | `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`                                           |
 
 ### Open-source LLMs
 
