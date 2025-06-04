@@ -1,11 +1,10 @@
 import { BedrockRuntimeClient, ConverseCommand, ConversationRole } from '@aws-sdk/client-bedrock-runtime';
 import { ModelProvider } from './base';
 import { JsonSchema, Usage } from '../types';
+import { calculateTokenCost } from './shared/tokenCost';
 
 // AWS Bedrock pricing for Mistral Mixtral 8x7B
-// These are placeholder values - update with actual Mistral pricing from AWS
-const COST_PER_1K_INPUT_TOKENS = 0.0007; // Placeholder for Mistral pricing
-const COST_PER_1K_OUTPUT_TOKENS = 0.0024; // Placeholder for Mistral pricing
+// Costs are now centralized in tokenCost.ts
 
 // Retry configuration for handling throttling
 const MAX_RETRIES = 5;
@@ -192,8 +191,8 @@ JSON extraído:`;
       const estimatedInputTokens = bedrockResponse.usage?.inputTokens || 0;
       const estimatedOutputTokens = bedrockResponse.usage?.outputTokens || 0;
 
-      const inputCost = (estimatedInputTokens / 1000) * COST_PER_1K_INPUT_TOKENS;
-      const outputCost = (estimatedOutputTokens / 1000) * COST_PER_1K_OUTPUT_TOKENS;
+      const inputCost = calculateTokenCost(this.model, 'input', estimatedInputTokens);
+      const outputCost = calculateTokenCost(this.model, 'output', estimatedOutputTokens);
 
       return {
         json,

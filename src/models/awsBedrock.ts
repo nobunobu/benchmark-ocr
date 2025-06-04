@@ -2,11 +2,11 @@ import { BedrockRuntimeClient, ConverseCommand, ConversationRole } from '@aws-sd
 import { ModelProvider } from './base';
 import { JsonSchema } from '../types';
 import { generateZodSchema } from '../utils';
+import { calculateTokenCost } from './shared/tokenCost';
 
 // AWS Bedrock pricing varies by model and region
 // For Llama 4 Maverick, pricing will depend on the specific model configuration
-const COST_PER_1K_INPUT_TOKENS = 0.0001; // Placeholder - update with actual pricing
-const COST_PER_1K_OUTPUT_TOKENS = 0.0002; // Placeholder - update with actual pricing
+// Costs are now centralized in tokenCost.ts
 
 // Retry configuration for handling throttling
 const MAX_RETRIES = 5;
@@ -133,8 +133,8 @@ export class AWSBedrockProvider extends ModelProvider {
       const estimatedInputTokens = bedrockResponse.usage?.inputTokens || 0;
       const estimatedOutputTokens = bedrockResponse.usage?.outputTokens || 0;
 
-      const inputCost = (estimatedInputTokens / 1000) * COST_PER_1K_INPUT_TOKENS;
-      const outputCost = (estimatedOutputTokens / 1000) * COST_PER_1K_OUTPUT_TOKENS;
+      const inputCost = calculateTokenCost(this.model, 'input', estimatedInputTokens);
+      const outputCost = calculateTokenCost(this.model, 'output', estimatedOutputTokens);
 
       return {
         text,
@@ -256,8 +256,8 @@ JSON:`;
       const estimatedInputTokens = bedrockResponse.usage?.inputTokens || 0;
       const estimatedOutputTokens = bedrockResponse.usage?.outputTokens || 0;
 
-      const inputCost = (estimatedInputTokens / 1000) * COST_PER_1K_INPUT_TOKENS;
-      const outputCost = (estimatedOutputTokens / 1000) * COST_PER_1K_OUTPUT_TOKENS;
+      const inputCost = calculateTokenCost(this.model, 'input', estimatedInputTokens);
+      const outputCost = calculateTokenCost(this.model, 'output', estimatedOutputTokens);
 
       return {
         json,
@@ -392,8 +392,8 @@ JSON:`;
       const estimatedInputTokens = bedrockResponse.usage?.inputTokens || 0;
       const estimatedOutputTokens = bedrockResponse.usage?.outputTokens || 0;
 
-      const inputCost = (estimatedInputTokens / 1000) * COST_PER_1K_INPUT_TOKENS;
-      const outputCost = (estimatedOutputTokens / 1000) * COST_PER_1K_OUTPUT_TOKENS;
+      const inputCost = calculateTokenCost(this.model, 'input', estimatedInputTokens);
+      const outputCost = calculateTokenCost(this.model, 'output', estimatedOutputTokens);
 
       return {
         json,

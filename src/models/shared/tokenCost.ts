@@ -186,6 +186,23 @@ export const TOKEN_COST = {
     input: 0.18,
     output: 0.18,
   },
+  // AWS Bedrock models
+  'us.meta.llama4-maverick-17b-instruct-v1:0': {
+    input: 0.1, // Equivalent to original 0.0001 per 1K tokens = 0.1 per 1M tokens
+    output: 0.2, // Equivalent to original 0.0002 per 1K tokens = 0.2 per 1M tokens
+  },
+  'mistral.mixtral-8x7b-instruct-v0:1': {
+    input: 0.7, // Equivalent to original 0.0007 per 1K tokens = 0.7 per 1M tokens
+    output: 2.4, // Equivalent to original 0.0024 per 1K tokens = 2.4 per 1M tokens
+  },
+  'pixtral-12b-v1': {
+    input: 0.1, // Equivalent to original 0.0001 per 1K tokens = 0.1 per 1M tokens
+    output: 0.2, // Equivalent to original 0.0002 per 1K tokens = 0.2 per 1M tokens
+  },
+  'pixtral-12b-instruct-v1': {
+    input: 0.1, // Equivalent to original 0.0001 per 1K tokens = 0.1 per 1M tokens
+    output: 0.2, // Equivalent to original 0.0002 per 1K tokens = 0.2 per 1M tokens
+  },
 };
 
 export const calculateTokenCost = (
