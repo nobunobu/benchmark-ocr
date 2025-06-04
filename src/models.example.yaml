@@ -34,6 +34,18 @@ models:
   # - ocr: claude-3-5-sonnet-20241022
   #   extraction: mistral.mixtral-8x7b-instruct-v0:1
 
+  # AWS Bedrock Pixtral examples
+  # - ocr: pixtral-12b-v1
+  #   extraction: pixtral-12b-v1
+  # - ocr: pixtral-12b-instruct-v1
+  #   extraction: pixtral-12b-instruct-v1
+  # - ocr: pixtral-12b-instruct-v1
+  #   extraction: pixtral-12b-instruct-v1
+  #   directImageExtraction: true
+  # Mixed pipeline: Pixtral OCR + GPT-4 extraction
+  # - ocr: pixtral-12b-v1
+  #   extraction: gpt-4o
+
   # OCR providers examples
   # - ocr: aws-textract
   #   extraction: gpt-4o

@@ -2,6 +2,7 @@ import { AzureDocumentIntelligenceProvider } from './azure';
 import { AWSTextractProvider } from './awsTextract';
 import { AWSBedrockProvider } from './awsBedrock';
 import { AWSBedrockMistralProvider } from './awsBedrockMistral';
+import { AWSBedrockPixtralProvider } from './awsBedrockPixtral';
 import { DashscopeProvider } from './dashscope';
 import { GeminiProvider } from './gemini';
 import { GoogleDocumentAIProvider } from './googleDocumentAI';
@@ -81,6 +82,11 @@ export const AWS_BEDROCK_MISTRAL_MODELS = [
   'mistral.mixtral-8x7b-instruct-v0:1',
 ];
 
+export const AWS_BEDROCK_PIXTRAL_MODELS = [
+  'pixtral-12b-v1',
+  'pixtral-12b-instruct-v1',
+];
+
 export const MODEL_PROVIDERS = {
   anthropic: {
     models: ANTHROPIC_MODELS,
@@ -97,6 +103,10 @@ export const MODEL_PROVIDERS = {
   awsBedrockMistral: {
     models: AWS_BEDROCK_MISTRAL_MODELS,
     provider: AWSBedrockMistralProvider,
+  },
+  awsBedrockPixtral: {
+    models: AWS_BEDROCK_PIXTRAL_MODELS,
+    provider: AWSBedrockPixtralProvider,
   },
   azureOpenai: {
     models: AZURE_OPENAI_MODELS,

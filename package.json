@@ -11,6 +11,7 @@
     "dashboard": "streamlit run dashboard/Home.py",
     "test-llama4": "ts-node scripts/test-llama4-connection.ts",
     "test-mistral": "ts-node scripts/test-mistral-connection.ts",
+    "test-pixtral": "ts-node scripts/test-pixtral-connection.ts",
     "postinstall": "echo 'Certifique-se de ter o ImageMagick instalado no seu sistema operacional.'"
   },
   "dependencies": {
