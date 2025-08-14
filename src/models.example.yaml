@@ -1,40 +1,67 @@
 models:
-  - ocr: ground-truth
-    extraction: gpt-4o
-
-  - ocr: gpt-4o
-    extraction: gpt-4o
-
-  - ocr: gpt-4o
-    extraction: gpt-4o
-    directImageExtraction: true
-
-  # - ocr: gemini-2.0-flash-001
+  # Ground Truth example - for testing purposes
+  # - ocr: ground-truth
   #   extraction: gpt-4o
 
-  # - ocr: azure-gpt-4o
-  #   extraction: azure-gpt-4o
+  # OpenAI GPT-4o examples
+  # - ocr: gpt-4o
+  #   extraction: gpt-4o
+  # - ocr: gpt-4o
+  #   extraction: gpt-4o
+  #   directImageExtraction: true
 
+  # Anthropic Claude examples
   # - ocr: claude-3-5-sonnet-20241022
   #   extraction: claude-3-5-sonnet-20241022
-
   # - ocr: claude-3-5-sonnet-20241022
   #   extraction: claude-3-5-sonnet-20241022
   #   directImageExtraction: true
+
+  # Google Gemini examples
+  # - ocr: gemini-2.0-flash-001
+  #   extraction: gpt-4o
+
+  # AWS Bedrock Llama 4 Maverick examples
+  # - ocr: us.meta.llama4-maverick-17b-instruct-v1:0
+  #   extraction: us.meta.llama4-maverick-17b-instruct-v1:0
+  # - ocr: us.meta.llama4-maverick-17b-instruct-v1:0
+  #   extraction: us.meta.llama4-maverick-17b-instruct-v1:0
+  #   directImageExtraction: true
+
+  # AWS Bedrock Mistral Mixtral-8x7b examples (text extraction only)
+  # - ocr: gpt-4o
+  #   extraction: mistral.mixtral-8x7b-instruct-v0:1
+  # - ocr: claude-3-5-sonnet-20241022
+  #   extraction: mistral.mixtral-8x7b-instruct-v0:1
+
+  # AWS Bedrock Pixtral examples
+  # - ocr: pixtral-12b-v1
+  #   extraction: pixtral-12b-v1
+  # - ocr: pixtral-12b-instruct-v1
+  #   extraction: pixtral-12b-instruct-v1
+  # - ocr: pixtral-12b-instruct-v1
+  #   extraction: pixtral-12b-instruct-v1
+  #   directImageExtraction: true
+  # Mixed pipeline: Pixtral OCR + GPT-4 extraction
+  # - ocr: pixtral-12b-v1
+  #   extraction: gpt-4o
+
+  # OCR providers examples
+  # - ocr: aws-textract
+  #   extraction: gpt-4o
+  # - ocr: google-document-ai
+  #   extraction: gpt-4o
+  # - ocr: azure-document-intelligence
+  #   extraction: gpt-4o
+
+  # Default configuration - uncomment to test
+  - ocr: gpt-4o
+    extraction: gpt-4o
 
   # - ocr: zerox
   #   extraction: gpt-4o
 
   # - ocr: omniai
-  #   extraction: gpt-4o
-
-  # - ocr: aws-textract
-  #   extraction: gpt-4o
-
-  # - ocr: google-document-ai
-  #   extraction: gpt-4o
-
-  # - ocr: azure-document-intelligence
   #   extraction: gpt-4o
 
   # - ocr: unstructured

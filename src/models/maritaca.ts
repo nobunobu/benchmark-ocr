@@ -4,14 +4,14 @@ import { ModelProvider } from './base';
 import { Usage } from '../types';
 import { calculateTokenCost, OCR_SYSTEM_PROMPT } from './shared';
 
-export class OpenAIProvider extends ModelProvider {
+export class MaritacaProvider extends ModelProvider {
   private client: OpenAI;
 
   constructor(model: string) {
     super(model);
 
-    const apiKey = process.env.COMPATIBLE_OPENAI_API_KEY;
-    const baseURL = process.env.COMPATIBLE_OPENAI_BASE_URL;
+    const apiKey = process.env.MARITACA_API_KEY;
+    const baseURL = process.env.MARITACA_BASE_URL;
     if (!apiKey) {
       throw new Error('Missing required API key');
     }

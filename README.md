@@ -41,12 +41,16 @@ In the example below, an LLM could decode both blocks of text without any issue.
 ## Running the benchmark
 
 1. Clone the repo and install dependencies: `npm install`
-2. Prepare your test data
+2. Install ImageMagick in your operational system
+3. Prepare your test data
    1. For local data, add individual files to the `data` folder.
    2. To pull from a DB, add `DATABASE_URL` in your `.env`
-3. Copy the `models.example.yaml` file to `models.yaml`. Set up API keys in `.env` for the models you want to test. Check out the [supported models](#supported-models) here.
-4. Run the benchmark: `npm run benchmark`
-5. Results will be saved in the `results/<timestamp>/results.json` file.
+4. Copy the `models.example.yaml` file to `models.yaml`. Set up API keys in `.env` for the models you want to test. Check out the [supported models](#supported-models) here.
+5. **For AWS Bedrock Llama 4 Maverick**: Test your connection first with `npm run test-llama4` (see [AWS Bedrock Configuration](./docs/AWS_BEDROCK_LLAMA4_CONFIGURATION.md))
+6. **For AWS Bedrock Mistral Mixtral-8x7b**: Test your connection first with `npm run test-mistral` (see [AWS Bedrock Mistral Configuration](./docs/AWS_BEDROCK_MISTRAL_CONFIGURATION.md))
+7. **For AWS Bedrock Pixtral**: Test your connection first with `npm run test-pixtral` (see [AWS Bedrock Pixtral Configuration](./docs/AWS_BEDROCK_PIXTRAL_CONFIGURATION.md))
+8. Run the benchmark: `npm run benchmark`
+9. Results will be saved in the `results/<timestamp>/results.json` file.
 
 ## Supported models
 
@@ -73,6 +77,9 @@ You can view configuration for each model in the [src/models/](./src/models/) fo
 | Gemini         | `gemini-2.0-flash-001`, `gemini-1.5-pro`, `gemini-1.5-flash` | ✅  | ✅              | `GOOGLE_GENERATIVE_AI_API_KEY`                                                                       |
 | Mistral        | `mistral-ocr`                                                | ✅  | ❌              | `MISTRAL_API_KEY`                                                                                    |
 | OmniAI         | `omniai`                                                     | ✅  | ✅              | `OMNIAI_API_KEY`, `OMNIAI_API_URL`                                                                   |
+| AWS Bedrock    | `us.meta.llama4-maverick-17b-instruct-v1:0`                 | ✅  | ✅              | `AWS_BEDROCK_INFERENCE_PROFILE_LLAMA4`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`  |
+| AWS Bedrock Mistral | `mistral.mixtral-8x7b-instruct-v0:1`                   | ❌  | ✅              | `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`                                           |
+| AWS Bedrock Pixtal | `pixtral-12b-v1`, `pixtral-12b-instruct-v1`              | ✅  | ✅              | `AWS_BEDROCK_INFERENCE_PROFILE_PIXTRAL`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`  |
 
 ### Open-source LLMs
 

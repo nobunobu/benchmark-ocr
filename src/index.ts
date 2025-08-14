@@ -39,6 +39,9 @@ const MODEL_CONCURRENCY = {
   'google/gemma-3-27b-it': 10,
   'meta-llama/Llama-3.2-11B-Vision-Instruct-Turbo': 10,
   'meta-llama/Llama-3.2-90B-Vision-Instruct-Turbo': 10,
+  'us.meta.llama4-maverick-17b-instruct-v1:0': 1,
+  'pixtral-12b-v1': 1,
+  'pixtral-12b-instruct-v1': 1,
   omniai: 30,
   zerox: 50,
 };

@@ -1,5 +1,8 @@
 import { AzureDocumentIntelligenceProvider } from './azure';
 import { AWSTextractProvider } from './awsTextract';
+import { AWSBedrockProvider } from './awsBedrock';
+import { AWSBedrockMistralProvider } from './awsBedrockMistral';
+import { AWSBedrockPixtralProvider } from './awsBedrockPixtral';
 import { DashscopeProvider } from './dashscope';
 import { GeminiProvider } from './gemini';
 import { GoogleDocumentAIProvider } from './googleDocumentAI';
@@ -11,6 +14,7 @@ import { OpenRouterProvider } from './openrouter';
 import { TogetherProvider } from './togetherai';
 import { UnstructuredProvider } from './unstructured';
 import { ZeroxProvider } from './zerox';
+import { MaritacaProvider } from './maritaca';
 
 export const OPENAI_MODELS = [
   'chatgpt-4o-latest',
@@ -38,8 +42,6 @@ export const AZURE_OPENAI_MODELS = [
 export const ANTHROPIC_MODELS = [
   'claude-3-5-sonnet-20241022',
   'claude-3-7-sonnet-20250219',
-  'claude-sonnet-4-20250514',
-  'claude-opus-4-20250514',
 ];
 export const DEEPSEEK_MODELS = ['deepseek-chat'];
 export const GOOGLE_GENERATIVE_AI_MODELS = [
@@ -48,7 +50,8 @@ export const GOOGLE_GENERATIVE_AI_MODELS = [
   'gemini-2.0-flash-001',
   'gemini-2.5-pro-exp-03-25',
   'gemini-2.5-pro-preview-03-25',
-  'gemini-2.5-flash-preview-05-20',
+  'gemini-2.5-pro-preview-05-06',
+  'gemini-2.5-flash-preview-04-17',
 ];
 export const OPENROUTER_MODELS = [
   'qwen/qwen2.5-vl-32b-instruct:free',
@@ -64,7 +67,25 @@ export const TOGETHER_MODELS = [
   'meta-llama/Llama-4-Scout-17B-16E-Instruct',
   'meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8',
 ];
+export const MARITACA_MODELS = [
+  'sabia-3',
+  'sabia-3.1',
+  'sabiazinho-3',
+];
 export const FINETUNED_MODELS = [];
+
+export const AWS_BEDROCK_MODELS = [
+  'us.meta.llama4-maverick-17b-instruct-v1:0',
+];
+
+export const AWS_BEDROCK_MISTRAL_MODELS = [
+  'mistral.mixtral-8x7b-instruct-v0:1',
+];
+
+export const AWS_BEDROCK_PIXTRAL_MODELS = [
+  'pixtral-12b-v1',
+  'pixtral-12b-instruct-v1',
+];
 
 export const MODEL_PROVIDERS = {
   anthropic: {
@@ -74,6 +95,18 @@ export const MODEL_PROVIDERS = {
   aws: {
     models: ['aws-textract'],
     provider: AWSTextractProvider,
+  },
+  awsBedrock: {
+    models: AWS_BEDROCK_MODELS,
+    provider: AWSBedrockProvider,
+  },
+  awsBedrockMistral: {
+    models: AWS_BEDROCK_MISTRAL_MODELS,
+    provider: AWSBedrockMistralProvider,
+  },
+  awsBedrockPixtral: {
+    models: AWS_BEDROCK_PIXTRAL_MODELS,
+    provider: AWSBedrockPixtralProvider,
   },
   azureOpenai: {
     models: AZURE_OPENAI_MODELS,
@@ -106,6 +139,10 @@ export const MODEL_PROVIDERS = {
   openai: {
     models: OPENAI_MODELS,
     provider: LLMProvider,
+  },
+  maritaca: {
+    models: MARITACA_MODELS,
+    provider: MaritacaProvider,
   },
   openaiBase: {
     models: ['google/gemma-3-27b-it'],

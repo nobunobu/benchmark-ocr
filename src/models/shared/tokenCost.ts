@@ -45,10 +45,6 @@ export const TOKEN_COST = {
     input: 3,
     output: 15,
   },
-  'claude-opus-4-20250514': {
-    input: 15,
-    output: 75,
-  },
   'deepseek-chat': {
     input: 0.14,
     output: 0.28,
@@ -73,7 +69,11 @@ export const TOKEN_COST = {
     input: 1.25,
     output: 10,
   },
-  'gemini-2.5-flash-preview-05-20': {
+  'gemini-2.5-pro-preview-05-06': {
+    input: 1.25,
+    output: 10,
+  },
+  'gemini-2.5-flash-preview-04-17': {
     input: 0.15,
     output: 0.6,
   },
@@ -165,6 +165,43 @@ export const TOKEN_COST = {
   'meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8': {
     input: 0.27,
     output: 0.85,
+  },
+  'sabia-3': {
+    input: 0.89, // R$5,00 cotação 2025-05-20
+    output: 1.77, // R$10,00 cotação 2025-05-20
+  },
+  'sabia-3.1': {
+    input: 0.89, // R$5,00 cotação 2025-05-20
+    output: 1.77, // R$10,00 cotação 2025-05-20
+  },
+  'sabiazinho-3': {
+    input: 0.18, // R$1,00 cotação 2025-05-20
+    output: 0.53, // R$3,00 cotação 2025-05-20
+  },
+  'aaditya/OpenBioLLM-Llama3-70B': {
+    input: 0.18,
+    output: 0.18,
+  },
+  'aaditya/OpenBioLLM-Llama3-70B-Instruct': {
+    input: 0.18,
+    output: 0.18,
+  },
+  // AWS Bedrock models
+  'us.meta.llama4-maverick-17b-instruct-v1:0': {
+    input: 0.1, // Equivalent to original 0.0001 per 1K tokens = 0.1 per 1M tokens
+    output: 0.2, // Equivalent to original 0.0002 per 1K tokens = 0.2 per 1M tokens
+  },
+  'mistral.mixtral-8x7b-instruct-v0:1': {
+    input: 0.7, // Equivalent to original 0.0007 per 1K tokens = 0.7 per 1M tokens
+    output: 2.4, // Equivalent to original 0.0024 per 1K tokens = 2.4 per 1M tokens
+  },
+  'pixtral-12b-v1': {
+    input: 0.1, // Equivalent to original 0.0001 per 1K tokens = 0.1 per 1M tokens
+    output: 0.2, // Equivalent to original 0.0002 per 1K tokens = 0.2 per 1M tokens
+  },
+  'pixtral-12b-instruct-v1': {
+    input: 0.1, // Equivalent to original 0.0001 per 1K tokens = 0.1 per 1M tokens
+    output: 0.2, // Equivalent to original 0.0002 per 1K tokens = 0.2 per 1M tokens
   },
 };
 
